@@ -1,17 +1,18 @@
 @import 'nib/vendor'
 
 vendor-prefixer = o moz ms webkit
+
+/*Pagina Principal*/
+
 body, html
 	height 100%
+.index 
+	overflow hidden
+		
 body 
 	margin 0
-	overflow hidden
 	font-family sans-serif
-.container
-	display flex
-	position relative
-	height 100%
-	figure
+	& > figure
 		position absolute
 		top 0
 		left 0
@@ -19,13 +20,17 @@ body
 		margin-left 20px
 		img
 			width 100%
+.container
+	display flex
+	position relative
+	height 100%
+	
 	.blanco, .naranja
 		display flex
 		width 50%
 		justify-content flex-end
 		align-items center 
 		position relative
-		z-index 100
 		overflow hidden
 		&:hover
 			width 125%		
@@ -59,7 +64,6 @@ body
 				.info
 					position absolute    		
 					right -100%
-					opacity 0
 					h2
 						color black
 						font-weight 100		
@@ -68,7 +72,6 @@ body
 		&:hover a .info 
 			right 70px
 			transition .5s
-			opacity 1
 		.colegio	img
 			width 150px	
 	.naranja
@@ -109,7 +112,7 @@ body
 .blanco-on
 	opacity 0.5	
 	transition 0.5s
-	
+/*Pagina Principal Fin*/	
 /*Trilce Colegio Inicio*/	
 .portada 
 	display flex
@@ -129,6 +132,7 @@ body
 			align-items center	
 			width max-content
 			font-size 13px
+			padding 0 10px
 			img
 				padding 10px
 			a
@@ -143,67 +147,411 @@ body
 			list-style none
 			li
 				display inline-block
+				margin 0 5px	
 				a
 					text-decoration none
 					color #53565a
-					font-weight 100		
-					margin 0 5px	
-					&:hover
-						color #f4633a
-						transition 0.5s
-				.sedes
+					font-weight 100
+					padding 22px 0		
+				&:hover a
+					color #f4633a
+					transition 0.3s
+				.sedes 	
 					width 100%
-					height 300px
 					position absolute
 					top 130px
-					/*visibility hidden*/
 					left 0
+					visibility hidden
+					display flex
 					border-top 2px solid black
 					border-bottom 1px solid black
-					.lima
-						width 60%
+					z-index 100
+					.titulo
+						width 20%
+						i
+							transform scale(2)
+							margin-left 15px
+						h1
+							width max-content
+							color #f4633a
+							font-weight 100
+							font-size 30px
+							span
+								font-weight bold
+					.lima 
+						background-color #fff
+						.titulo i
+							color #f4633a											
+					.lima, .provincia
+						width 65%
 						display flex
 						align-items center
-						.titulo
-							width 40%
-							h1
-								width max-content
-								margin auto
-								color #f4633a
-								font-weight 100
-								span
-									font-weight bold
+						justify-content space-around		
+						padding 10px 0
 						.menu
-							width 60%
+							width 20%
 							height 300px
 							display flex
 							flex-direction column
 							flex-wrap wrap
-							padding 0
+							padding 0			
+							&:last-child
+								width 30%				
 							li
 								height 33px
 								display flex
 								align-items center
 								a
 									color gray
+								&:hover, &:hover a 
+									color #f4633a
 					.provincia
 						width 40%		
-				&:first-child:hover .sedes
-					top 150px
-					visibility visible
-					transition .5s
-			
+						background-color #EAEAEA	
+						.titulo h1
+							color black
+						.menu
+							display flex
+							justify-content center	
+			.sedes-hover:hover .sedes
+				top 140px
+				visibility visible
+				transition .7s
+					
+.slideshow
+	.slider
+		background-image linear-gradient(left, #EAEAEA, white)
+		li
+			display inline-block	
+			display flex
+			justify-content center
+			overflow hidden
+			.slideritem-container 
+				margin 50px 100px
+				border-top 9px solid	#f4633a	
+				border-bottom 9px solid	#f4633a	
+				border-top-color transparent
+				display flex
+				position relative	
+				align-items center
+				justify-content space-between
+				max-width 1100px
+				width 100%
+				height 380px
+				img
+					width 450px
+					position absolute
+					right 60px
+				.info
+					text-align left
+					margin-left -10%
+					i,h1
+						color #f4633a	
+						font-size 45px
+						margin 0
+					p
+						font-size 25px	
+						margin 15px 0
+						color gray
+						span
+							color black
+					button
+						background-color #f4633a	
+						border none
+						color white
+						padding 15px 25px
+						font-size 20px
+						cursor pointer	
+				.info2
+					width 150px
+					margin-left -80px
+					h1
+						margin-bottom 10px
+					p
+						font-size: 15px
+						margin: 0
+				.info3, .info4
+					margin-left -7%
+				.info3 h1:nth-child(3)
+					margin-bottom: 15px	
+				.info4 h1
+					font-size: 35px
+					font-weight: 600
+					&:nth-child(4)
+						margin-bottom: 15px	
+				.info-flotante 
+					h2
+						color	#f4633a	
+						margin-right 80px
+					button
+						background-color #f4633a
+						border none
+						color white
+						font-size: 15px
+						padding 10px 20px
+				.borde 
+					position absolute
+					top -2px
+					background-color #f4633a
+					height 9px
+					width calc(100% - 50px)
+				.tslider 
+					width 80px
+					position absolute
+					top -8px			
+					right -36px
+					padding 0 0 15px 8px
+				.olivos
+					width 300px	
+					right 320px
+				.primer
+					width 150px
+					left 25%	
+				.primer2
+					width 200px
+				&::after
+					content ''
+					height 101%
+					width 9px
+					position absolute
+					left 0px
+					background linear-gradient(180deg,#f4633a 24%,rgba(244,99,58,0) 0, 85%,#f4633a 10%)	
+				&::before
+					content ''
+					height 101%
+					width 9px
+					position absolute
+					right 0px
+					background linear-gradient(0deg,#f4633a 78%,transparent 0)	
+			.slideritem-container [src="../images/slider1.png"]
+				width 400px
+			.slideritem-container [src="../images/slider5.png"], .slideritem-container [src="../images/slider6.png"]
+				width 800px
+				bottom -70px
+				right 70px
+			.slideritem-container [src="../images/slider7.png"]
+				width 470px
+				bottom -58px	
+			.slideritem-container [src="../images/slider8.png"]	
+				width 360px
+				bottom -65px
+				right 35%
+			.slideritem-container2::after
+				content ''
+				height 101%
+				width 9px
+				position absolute
+				left 0px
+				background linear-gradient(180deg,#f4633a 24%,rgba(244,99,58,0) 0, 75%,#f4633a 10%)
+
+.matricula
+	display flex
+	width 1100px
+	margin 80px auto
+	justify-content space-between
+	.info
+		margin-left -100px
+		padding 30px
+		h1
+			color #f4633a
+			margin 0
+			font-size 50px
+		p
+			margin-bottom 0
+			color gray
+		p:last-child
+			margin-top 0	
+	.tipo-alumno
+		display flex
+		justify-content flex-end
+		width 80%
+		padding 30px
+		&:hover div
+			border-color gray
+			color gray		
+		div
+			border 1px solid black
+			margin 0 12px
+			padding 40px 20px 10px 20px
+			width 170px
+			text-align center
+			text-transform uppercase
+			cursor pointer
+			h1
+				margin 0
+				font-size 25px
+			h2
+				margin 20px 0 5px 0
+				font-size 15px 	
+			p
+				text-transform lowercase
+				margin 0
+			&:hover
+				border-color #f4633a 
+				color #f4633a
+
+.beforefooter
+	background-color #EAEAEA
+	display flex
+	justify-content space-around
+	a
+		text-decoration none
+		color black
+		width 25%
+		display flex
+		height 100%
+		justify-content center
+		padding 50px 0
+		div
+			i
+				font-size 20px
+				margin 20px 0 20px 5px
+			h1
+				margin 0
+				color #f4633a		
+				font-weight 100
+				font-size 20px
+			p
+				margin 0	
+				font-weight 100
+				font-size 13px
+				color gray
+		
+.footer-colegio 
+	background-color #53565a
+	color #d4d6d8
+	.estas
+		padding 15px 0 10px 70px
+		border-bottom 1px solid #85898e
+		p
+			margin 0
+			span 
+				color white
+	.inferior
+		width calc(100% - 140px)
+		margin auto
+		display flex
+		.pes
+			width 50%
+			margin-top 20px
+			display inline-block
+			a
+				color #d4d6d8
+				font-size 15px 
+				text-decoration none
+				padding 0 10px 0 0
+				&:first-child
+					border-right 1px solid white		
+		.footer-redes
+			width 49%
+			display inline-block
+			text-align right
+			p
+				font-size 13px		
+			.social
+				.btn
+					color white
+					text-decoration none
+					font-size 20px
+					margin 0 10px		
+					border-radius 10px		
+					&:nth-child(1):hover
+						color green
+					&:nth-child(2):hover
+						color skyblue
+					&:nth-child(3):hover
+						color #3B5998
+					&:nth-child(4):hover
+						color red
+					&:nth-child(5)
+						position relative
+						z-index 100
+						i::after
+							content ' '
+							position absolute
+							display block
+							width 17px
+							height 17px
+							background-image linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%)
+							border-radius 10px
+							visibility hidden
+							z-index -1
+							top 2.6px
+							left .5px
+						&:hover ::after
+							visibility visible	
+	.derechos 
+		text-align center		
+		padding-bottom 10px								
+/*Academia Inicio*/
+.portada
+	.info
+		.menu
+			li
+				.sedes-academia
+					border-top 8px solid #f4633a
+.tipo-preparacion ul li
+	display block						
+
+/*Academia Fin*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Media Querys*/					
+
 @media screen and (max-width 1024px)
 	.cuadro img
 		display none
 @media screen and (max-width 800px)		
+	body > figure
+		margin 0
+		width 100%
+		text-align center
+		img
+			max-width 400px
+			width 60%
+	.blanco-on
+		opacity 1
 	.container.prin
 		flex-direction column
+		justify-content flex-end
+		width 100%	
 		.naranja, .blanco	
 			width 100%
-			height 100%
+			height 40%
 			.cuadro
 				border none
+				position static
+				img
+					display block
+					right 20px
 				&::before
-					content ''	
+					content ''
 					display none
+				.info h2
+					display none	
+			.colegio img
+				position absolute
+				left 10%
+				z-index 1110
+		.blanco
+			overflow visible
+			.cuadro img
+				left 20px
+			.colegio img 
+				left initial
+				right 8%
+			&:hover ~ .naranja
+				opacity 1		
